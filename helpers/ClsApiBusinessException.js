@@ -1,6 +1,6 @@
-class ClsApiBusinessException{
-  constructor(clsStatusModel ) {
-    this.ClsStatusModel = clsStatusModel
+class ClsApiBusinessException {
+  constructor(clsStatusModel) {
+    this.ClsStatusModel = clsStatusModel;
   }
 }
 
