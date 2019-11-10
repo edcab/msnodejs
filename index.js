@@ -18,7 +18,8 @@ const server = {
     app.use(NicknamesRouters);
 
     // Own Error Handler
-    app.use((error, req, res) => {
+    // eslint-disable-next-line no-unused-vars
+    app.use((error, req, res, next) => {
       const { HttpCode } = JSON.parse(error.message);
 
       if (HttpCode === '400') {
