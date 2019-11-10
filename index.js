@@ -9,10 +9,10 @@ const NicknamesRouters = routers;
 let _server; // The let statement declares a block scope local variable, optionally initializing it to a value.
 
 const server = {
-  start() {
-    const app = express();
+  start() { // method one
+    const app = express(); // creacion de servidor
 
-    config(app);
+    config(app); // cargamos nuestra configuracion, le enviamos la app que estamos creando
 
     // Routes
     app.use(NicknamesRouters);
@@ -31,13 +31,13 @@ const server = {
       }
     });
 
-    _server = app.listen('8117', () => {
+    _server = app.listen('8117', () => { // guardamos la instancia de la creacion del servidor
       if (process.env.NODE_ENV !== 'test') {
         console.log('Server opened listen on http://localhost:8117');
       }
     });
   },
-  close() {
+  close() { // method two
     _server.close();
   },
 };
