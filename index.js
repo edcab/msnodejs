@@ -31,9 +31,9 @@ const server = {
       }
     });
 
-    _server = app.listen('8117', () => { // guardamos la instancia de la creacion del servidor
+    _server = app.listen(app.locals.config.PORT, () => { // guardamos la instancia de la creacion del servidor
       if (process.env.NODE_ENV !== 'test') {
-        console.log('Server opened listen on http://localhost:8117');
+        console.log(`Server opened listen on http://localhost:${app.locals.config.PORT}`);
       }
     });
   },
