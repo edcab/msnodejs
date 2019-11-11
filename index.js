@@ -4,6 +4,7 @@ import routers from './routers/nicknames';
 
 import config from './config/config';
 
+
 const NicknamesRouters = routers;
 
 let _server; // The let statement declares a block scope local variable, optionally initializing it to a value.
@@ -11,7 +12,6 @@ let _server; // The let statement declares a block scope local variable, optiona
 const server = {
   start() { // method one
     const app = express(); // creacion de servidor
-
     config(app); // cargamos nuestra configuracion, le enviamos la app que estamos creando
 
     // Routes

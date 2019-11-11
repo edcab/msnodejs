@@ -1,4 +1,4 @@
-import validaciones from '../helpers/validations';
+import validaciones from 'response-ifx-module';
 
 exports.getNicknamesAdministration = (req, res) => {
   console.log('We are in Controller/getNicknamesAdministration');
