@@ -1,7 +1,9 @@
 import validaciones from 'response-ifx-module';
+import { getNicknames } from '../service/ClsGetNicknamesService';
+import { extractHeaders } from '../util/ClsUtils';
 
 exports.getNicknamesAdministration = (req, res) => {
   console.log('We are in Controller/getNicknamesAdministration');
   validaciones.validateHeaders(req);
-  res.send('<form action= "/product" method="POST"><input type = "text" name = "title"> <button type="submit">Add Product</button></form>');
+  getNicknames(extractHeaders(req.headers, req, res));
 };

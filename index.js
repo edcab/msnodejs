@@ -20,16 +20,24 @@ const server = {
     // Own Error Handler
     // eslint-disable-next-line no-unused-vars
     app.use((error, req, res, next) => {
-      const { HttpCode } = JSON.parse(error.message);
+      // const { HttpCode } = JSON.parse(error.message);
+      //
+      // if (HttpCode === '400') {
+      //   const { HttpCode, HttpMessage, MoreInformation } = JSON.parse(error.message);
+      //   res.status(400).json({
+      //     HttpCode,
+      //     HttpMessage,
+      //     MoreInformation,
+      //   }).send;
+      // }
 
-      if (HttpCode === '400') {
-        const { HttpCode, HttpMessage, MoreInformation } = JSON.parse(error.message);
-        res.status(400).json({
-          HttpCode,
-          HttpMessage,
-          MoreInformation,
-        }).send;
-      }
+      console.log('ERROR', error);
+      res.status(500).json({
+        HttpCode: 500,
+        HttpMessage: error.message,
+        MoreInformation: error.stack
+
+      }).send;
     });
 
     _server = app.listen(app.locals.config.PORT, () => { // guardamos la instancia de la creacion del servidor
