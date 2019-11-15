@@ -5,5 +5,5 @@ import { extractHeaders } from '../util/ClsUtils';
 exports.getNicknamesAdministration = (req, res) => {
   console.log('We are in Controller/getNicknamesAdministration');
   validaciones.validateHeaders(req);
-  getNicknames(extractHeaders(req.headers, req, res));
+  getNicknames(extractHeaders(req.headers), req, res);
 };

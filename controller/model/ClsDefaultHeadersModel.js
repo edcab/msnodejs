@@ -1,6 +1,6 @@
 const secret = new WeakMap();
 
-class ClsDefaultHeadersModel {
+export class ClsDefaultHeadersModel {
   constructor(rquid, companyId, identSerialNum, govIssueIdentType, legalName, ipAddr, channel) {
     secret.set(this, { _rquid: rquid });
     secret.set(this, { _companyId: companyId });
@@ -67,5 +67,3 @@ class ClsDefaultHeadersModel {
     return secret.get(this)._channel;
   }
 }
-
-module.exports = { ClsDefaultHeadersModel };
